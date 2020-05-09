@@ -11,6 +11,8 @@ module Spree
     
     has_attached_file :template_file, storage: :filesystem,path: 'public/system/spree/themes/:filename'
     validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+    validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+
 
 
     ## VALIDATIONS ##
