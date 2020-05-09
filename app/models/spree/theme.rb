@@ -9,7 +9,7 @@ module Spree
     CURRENT_THEME_PATH = File.join(THEMES_PATH, 'current')
     ASSET_CACHE_PATH = File.join(Rails.root, 'tmp', 'cache')
     
-    has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+    has_attached_file :template_file, storage: :filesystem,path: 'public/system/spree/themes/:filename'
     validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
     ## VALIDATIONS ##
