@@ -8,7 +8,9 @@ module Spree
     THEMES_PATH = File.join(Rails.root, 'public', 'vinsol_spree_themes')
     CURRENT_THEME_PATH = File.join(THEMES_PATH, 'current')
     ASSET_CACHE_PATH = File.join(Rails.root, 'tmp', 'cache')
-
+    
+    has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+    validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
     ## VALIDATIONS ##
 
