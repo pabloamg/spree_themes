@@ -10,8 +10,7 @@ module Spree
     ASSET_CACHE_PATH = File.join(Rails.root, 'tmp', 'cache')
     
     has_attached_file :template_file, storage: :filesystem,path: 'public/system/spree/themes/:filename'
-    validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-    validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+    validates_attachment :template_file, content_type: { content_type: ["application/zip"] }
 
 
 
