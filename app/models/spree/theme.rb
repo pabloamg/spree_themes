@@ -11,7 +11,6 @@ module Spree
 
 
     ## VALIDATIONS ##
-    do_not_validate_attachment_file_type :template_file
 
     validates :name, presence: true,
                      uniqueness: { case_sensitive: false }
